@@ -8,7 +8,7 @@ import io
 
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
-folder_id = '1uDrwv__C_4VqDbqe1UAd5iZAX3UFwrHI'
+folder_id = 'YOUR_FOLDER_ID'
 
 
 def download_file(service, file_id, filename, download_path):
@@ -38,7 +38,7 @@ def main():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                r'C:\Users\Stephanie\Documents\GitHub\NLP_Parlement\client_secret_999205551216-6256q9bovmemq7qbmigrrt2828s6en3p.apps.googleusercontent.com.json', SCOPES)
+                r'YOUR_JSON_FILES', SCOPES)
             creds = flow.run_local_server(port=8080)
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
